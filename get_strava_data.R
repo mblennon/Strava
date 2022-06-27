@@ -1,6 +1,10 @@
 
 library(httr) 
 
+
+# get stream data for two activities in vector 'activities'
+# note cookie is not valid and needs to update for current session
+
 activities = c(7352923995,7349180819)
 
 df_activity<-data.frame()
@@ -17,7 +21,7 @@ for (i in (1:length(activities))){
   df_activity<-rbind(df_activity,df)
 }
 
-# Calculate performance
+# Get a summary list of last 200 actvities for an athlete and save as dataframe
 
 library(httr) 
 headers = c('Authorization' = 'Bearer 929f8ad9bfd6e4941671ab20625aff18e0f860c6')
